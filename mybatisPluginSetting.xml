@@ -1,0 +1,10 @@
+<application>
+  <component name="MybatisPluginSetting">
+    <MainConfigs>
+      <MainConfig name="ddd" javaPatch="C:\Users\26238\IdeaProjects\config-server\src\main\java" resourcesPatch="C:\Users\26238\IdeaProjects\config-server\src\main\resources" flag="1" />
+    </MainConfigs>
+    <DatabaseConfigs>
+      <DatabaseConfig otherName="test" databaseName="test" host="127.0.0.1" port="3306" databaseType="mysql" userName="root" passwd="root" flag="1" />
+    </DatabaseConfigs>
+  </component>
+</application>
