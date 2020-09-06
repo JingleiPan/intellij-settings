@@ -1,11 +1,4 @@
 <templateSet group="sl4j">
-  <template name="loginfo" value="LOG.info(&quot;$EXPR_COPY$ = {}&quot;, $EXPR$);" description="Prints a value to LOG.info" toReformat="true" toShortenFQNames="true">
-    <variable name="EXPR" expression="variableOfType(&quot;&quot;)" defaultValue="&quot;expr&quot;" alwaysStopAt="true" />
-    <variable name="EXPR_COPY" expression="escapeString(EXPR)" defaultValue="" alwaysStopAt="false" />
-    <context>
-      <option name="JAVA_STATEMENT" value="true" />
-    </context>
-  </template>
   <template name="getlogger" value="private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger($CLASS_NAME$.class);" description="get logger for current class." toReformat="false" toShortenFQNames="true">
     <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -20,7 +13,8 @@
       <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="logp" value="LOG.$level$($FORMAT$)" description="" toReformat="false" toShortenFQNames="true">
+  <template name="logp" value="$logger$.$level$($FORMAT$);" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="logger" expression="variableOfType(&quot;org.slf4j.Logger&quot;)" defaultValue="LOG" alwaysStopAt="false" />
     <variable name="level" expression="" defaultValue="&quot;info&quot;" alwaysStopAt="true" />
     <variable name="FORMAT" expression="groovyScript(&quot;import com.intellij.psi.*;import com.intellij.psi.util.PsiTreeUtil; def file = PsiDocumentManager.getInstance(_editor.project).getPsiFile(_editor.document); PsiMethod method = PsiTreeUtil.findElementOfClassAtOffset(file, _editor.caretModel.offset, PsiMethod.class, false); PsiParameter[] parameters = method == null ? PsiParameter.EMPTY_ARRAY : method.parameterList.parameters; return parameters.size() == 0 ? '' : '\&quot;' + parameters.collect { def prefix = it.name + ' = '; def type = it.type; return type instanceof PsiArrayType ? type.componentType instanceof PsiPrimitiveType ? prefix + '\&quot; + java.util.Arrays.toString(' + it.name + ')' : prefix + '\&quot; + java.util.Arrays.deepToString(' + it.name + ')' : prefix + '\&quot; + ' + it.name }.join(' + \&quot;, ')&quot;, methodParameters())" defaultValue="" alwaysStopAt="false" />
     <context>

@@ -4,7 +4,7 @@
       <conditions>
         <condition id="non void" />
       </conditions>
-      <template name="fakeKey" value="LOG.info(&quot;$EXPR$={}&quot;,$EXPR$);$END$" description="" toReformat="true" toShortenFQNames="true" />
+      <template name="fakeKey" value="LOG.info(&quot;$EXPR$ = {}&quot;,$EXPR$);$END$" toReformat="true" toShortenFQNames="true" />
     </template>
   </component>
   <component name="PostfixTemplatesSettings">
