@@ -1884,6 +1884,11 @@
                       <FeaturePluginData displayName="Tomcat Server" pluginName="Tomcat and TomEE" pluginId="Tomcat" />
                     </value>
                   </entry>
+                  <entry key="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+                    <value>
+                      <FeaturePluginData displayName="Plugin" pluginName="Plugin DevKit" pluginId="DevKit" />
+                    </value>
+                  </entry>
                   <entry key="Application">
                     <value>
                       <FeaturePluginData displayName="Application" pluginName="Java" pluginId="com.intellij.java" />
@@ -1917,6 +1922,11 @@
                   <entry key="GradleRunConfiguration">
                     <value>
                       <FeaturePluginData displayName="Gradle" pluginName="Gradle" pluginId="com.intellij.gradle" />
+                    </value>
+                  </entry>
+                  <entry key="GroovyScriptRunConfiguration">
+                    <value>
+                      <FeaturePluginData displayName="Groovy" pluginName="Groovy" pluginId="org.intellij.groovy" />
                     </value>
                   </entry>
                   <entry key="HttpClient.HttpRequestRunConfigurationType">
